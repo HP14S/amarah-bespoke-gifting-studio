@@ -28,7 +28,7 @@ export function InquiryDialog({
 }: {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  selection?: InquirySelection;
+  selection?: InquirySelection | undefined;
 }) {
   const id = useId();
   const [name, setName] = useState("");
