@@ -42,7 +42,7 @@ function Figure({
         className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
       />
       {caption && (
-        <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-ink/60 to-transparent px-4 pb-3 pt-10 font-serif text-lg italic text-ink-foreground">
+        <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-ink/60 to-transparent px-3 pb-2.5 pt-10 font-serif text-base italic leading-tight sm:px-4 sm:pb-3 sm:text-lg text-ink-foreground">
           {caption}
         </figcaption>
       )}
@@ -105,7 +105,7 @@ export function Offerings() {
             className="aspect-[4/5] lg:col-span-7 lg:aspect-auto lg:min-h-[44rem]"
           />
           <div className="flex flex-col gap-5 lg:col-span-5 lg:gap-8">
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-2 gap-3 sm:gap-5">
               <Figure
                 src={orange.url}
                 alt="Citrus inspiration for the Iced Crushed Orange candle"
@@ -125,7 +125,7 @@ export function Offerings() {
                 className="aspect-[3/4]"
               />
             </div>
-            <div className="flex flex-1 flex-col justify-center bg-card p-8 md:p-10">
+            <div className="flex flex-1 flex-col justify-center bg-card p-6 sm:p-8 md:p-10">
               <p className="eyebrow text-terracotta">A little atmosphere</p>
               <h3 className="mt-3 text-4xl text-foreground md:text-[2.75rem]">
                 Scented &amp; Wellness Candles
@@ -183,14 +183,14 @@ export function Offerings() {
               ceremonies and all the beautiful in-between moments. Made around your occasion, in
               your own words.
             </p>
-            <dl className="mt-8 grid grid-cols-2 gap-px overflow-hidden border border-border bg-border">
+            <dl className="mt-8 grid gap-px sm:grid-cols-2 overflow-hidden border border-border bg-border">
               {[
                 ["Occasions", "Weddings, birthdays, baptisms, housewarmings"],
                 ["Personal touches", "Names, dates, your own words"],
                 ["Finishing", "Fine paper, ribbon & wax seals"],
                 ["Made for", "Guests, families & keepsake boxes"],
               ].map(([k, v]) => (
-                <div key={k} className="bg-background p-5">
+                <div key={k} className="bg-background p-4 sm:p-5">
                   <dt className="eyebrow text-[0.62rem] text-muted-foreground">{k}</dt>
                   <dd className="mt-2 font-serif text-lg leading-snug text-foreground">{v}</dd>
                 </div>
@@ -222,9 +222,16 @@ export function Offerings() {
               care.
             </p>
           </div>
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
-            {HAMPERS.map((h) => (
-              <article key={h.name} className="flex flex-col bg-card">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:mt-14 lg:grid-cols-3">
+            {HAMPERS.map((h, i) => (
+              <article
+                key={h.name}
+                className={
+                  i === HAMPERS.length - 1
+                    ? "flex flex-col bg-card sm:col-span-2 sm:grid sm:grid-cols-2 lg:col-span-1 lg:flex"
+                    : "flex flex-col bg-card"
+                }
+              >
                 <Figure
                   src={h.img.src}
                   alt={h.alt}
@@ -233,14 +240,14 @@ export function Offerings() {
                   height={h.img.h}
                   className="aspect-[4/5]"
                 />
-                <div className="flex flex-1 flex-col p-7">
+                <div className="flex flex-1 flex-col p-6 sm:p-7">
                   <p className="eyebrow text-[0.62rem] text-terracotta">{h.eyebrow}</p>
                   <h4 className="mt-2 font-serif text-3xl text-foreground">{h.name}</h4>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
                     {h.text}
                   </p>
                   <div className="mt-6">
-                    <AskPriceButton product={h.name} variant="outline" />
+                    <AskPriceButton product={h.name} kind="hamper" variant="outline" />
                   </div>
                 </div>
               </article>

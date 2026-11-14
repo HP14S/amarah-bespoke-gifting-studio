@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Approach } from "@/components/site/Approach";
 import { ContactFooter } from "@/components/site/ContactFooter";
 import { Hero } from "@/components/site/Hero";
+import { InquiryProvider } from "@/components/site/InquiryProvider";
 import { Offerings } from "@/components/site/Offerings";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { StudioIntro } from "@/components/site/StudioIntro";
@@ -27,15 +28,17 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background">
-      <SiteHeader />
-      <main>
-        <Hero />
-        <StudioIntro />
-        <Offerings />
-        <Approach />
-      </main>
-      <ContactFooter />
-    </div>
+    <InquiryProvider>
+      <div className="min-h-screen overflow-x-clip bg-background">
+        <SiteHeader />
+        <main>
+          <Hero />
+          <StudioIntro />
+          <Offerings />
+          <Approach />
+        </main>
+        <ContactFooter />
+      </div>
+    </InquiryProvider>
   );
 }
