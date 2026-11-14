@@ -43,7 +43,7 @@ export function Hero() {
 
         <div className="relative lg:col-span-6 lg:pl-8">
           <div className="relative ml-auto max-w-xl">
-            <div className="absolute -left-6 -top-6 z-10 flex h-24 w-24 -rotate-12 items-center justify-center rounded-full border border-border bg-background text-center font-serif text-base italic leading-tight text-foreground shadow-sm md:-left-10 md:h-28 md:w-28 md:text-lg">
+            <div className="absolute -top-6 left-3 z-10 flex h-24 w-24 -rotate-12 items-center justify-center rounded-full border border-border bg-background text-center font-serif text-base italic leading-tight text-foreground shadow-sm md:-left-10 md:h-28 md:w-28 md:text-lg">
               A little
               <br />
               more meaning
