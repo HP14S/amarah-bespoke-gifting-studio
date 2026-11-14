@@ -19,7 +19,7 @@ const SELECTION_LABEL = {
 } as const;
 
 const fieldClass =
-  "block w-full rounded-sm border border-input bg-background px-4 py-3 text-base text-foreground shadow-[inset_0_1px_2px_color-mix(in_oklab,var(--ink)_6%,transparent)] transition-colors placeholder:text-muted-foreground/80 focus:border-rose focus:outline-none focus:ring-2 focus:ring-rose/20 sm:text-sm";
+  "block w-full rounded-sm border border-input bg-background px-4 py-2.5 text-base text-foreground sm:py-3 shadow-[inset_0_1px_2px_color-mix(in_oklab,var(--ink)_6%,transparent)] transition-colors placeholder:text-muted-foreground/80 focus:border-rose focus:outline-none focus:ring-2 focus:ring-rose/20 sm:text-sm";
 
 export function InquiryDialog({
   open,
@@ -59,7 +59,7 @@ export function InquiryDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-h-[calc(100dvh-1.5rem)] w-[calc(100%-1.5rem)] max-w-lg gap-0 overflow-y-auto overscroll-contain rounded-sm border-border bg-popover p-6 shadow-[var(--shadow-soft)] sm:w-full sm:rounded-sm sm:p-9 [&>button]:right-4 [&>button]:top-4 [&>button]:flex [&>button]:h-9 [&>button]:w-9 [&>button]:items-center [&>button]:justify-center [&>button]:rounded-full [&>button]:data-[state=open]:bg-transparent [&>button]:hover:bg-secondary">
+      <DialogContent className="max-h-[calc(100dvh-1.5rem)] w-[calc(100%-1.5rem)] max-w-lg gap-0 overflow-y-auto overscroll-contain rounded-sm border-border bg-popover p-5 shadow-[var(--shadow-soft)] sm:w-full sm:rounded-sm sm:p-9 [&>button]:right-3 [&>button]:top-3 sm:[&>button]:right-4 sm:[&>button]:top-4 [&>button]:flex [&>button]:h-9 [&>button]:w-9 [&>button]:items-center [&>button]:justify-center [&>button]:rounded-full [&>button]:data-[state=open]:bg-transparent [&>button]:hover:bg-secondary">
         <DialogHeader className="space-y-0 pr-8 text-left">
           <p className="eyebrow text-[0.65rem] text-terracotta">A personal note</p>
           <DialogTitle className="mt-3 font-serif text-[2rem] font-normal leading-[1.05] tracking-normal text-foreground sm:text-4xl">
@@ -70,14 +70,14 @@ export function InquiryDialog({
           </DialogDescription>
         </DialogHeader>
 
-        <div className="mt-6 border-l-2 border-rose bg-card px-5 py-4">
+        <div className="mt-5 border-l-2 sm:mt-6 border-rose bg-card px-5 py-4">
           <p className="eyebrow text-[0.6rem] text-muted-foreground">{SELECTION_LABEL[kind]}</p>
           <p className="mt-1.5 font-serif text-xl leading-snug text-foreground sm:text-2xl">
             {item}
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="mt-6 space-y-5" noValidate={false}>
+        <form onSubmit={handleSubmit} className="mt-5 space-y-4 sm:mt-6 sm:space-y-5">
           <div>
             <label htmlFor={`${id}-name`} className="text-sm font-medium text-foreground">
               Your name
@@ -132,7 +132,7 @@ export function InquiryDialog({
               placeholder="The occasion, the person, or a detail you love…"
               value={note}
               onChange={(e) => setNote(e.target.value)}
-              className={`mt-2 min-h-[6.5rem] resize-y ${fieldClass}`}
+              className={`mt-2 min-h-[5.5rem] resize-y sm:min-h-[6.5rem] ${fieldClass}`}
             />
           </div>
 

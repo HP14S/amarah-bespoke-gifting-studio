@@ -76,7 +76,7 @@ export function Approach() {
             ))}
           </ul>
 
-          <div className="mt-10 bg-background p-6 shadow-[var(--shadow-soft)] sm:p-8">
+          <div className="mt-10 bg-background p-5 shadow-[var(--shadow-soft)] sm:p-8">
             <p className="eyebrow text-[0.65rem] text-terracotta">Bespoke gifting</p>
             <p className="mt-3 font-serif text-3xl leading-tight text-foreground sm:text-4xl">
               Let&rsquo;s make it <em className="italic text-rose">meaningful.</em>
@@ -89,7 +89,7 @@ export function Approach() {
               type="button"
               onClick={() => openInquiry()}
               aria-haspopup="dialog"
-              className="group mt-7 inline-flex w-full items-center justify-center gap-2.5 rounded-sm bg-primary px-6 py-4 text-sm font-medium text-primary-foreground transition-all duration-300 hover:bg-primary/90 hover:shadow-[var(--shadow-soft)] sm:w-auto"
+              className="group mt-7 inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-sm bg-primary px-4 py-4 text-sm font-medium text-primary-foreground transition-all duration-300 hover:bg-primary/90 hover:shadow-[var(--shadow-soft)] sm:w-auto sm:gap-2.5 sm:px-6"
             >
               <MessageCircle className="h-4 w-4" strokeWidth={1.5} />
               Tell us what you have in mind
