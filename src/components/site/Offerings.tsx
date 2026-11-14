@@ -240,7 +240,7 @@ export function Offerings() {
                     {h.text}
                   </p>
                   <div className="mt-6">
-                    <AskPriceButton product={h.name} variant="outline" />
+                    <AskPriceButton product={h.name} kind="hamper" variant="outline" />
                   </div>
                 </div>
               </article>

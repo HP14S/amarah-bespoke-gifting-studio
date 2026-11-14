@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 import logo from "@/assets/house-of-amarah-logo.png";
-import { GENERAL_ENQUIRY_MESSAGE, whatsappLink } from "@/lib/whatsapp";
+
+import { useInquiry } from "./InquiryProvider";
 
 export const NAV_ITEMS = [
   { label: "Home", href: "#home" },
@@ -13,17 +14,18 @@ export const NAV_ITEMS = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const { openInquiry } = useInquiry();
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur-md">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-6 px-5 md:px-8">
+      <div className="mx-auto flex h-16 max-w-7xl sm:h-20 items-center justify-between gap-6 px-5 md:px-8">
         <a href="#home" className="shrink-0" aria-label="House of Amarah — home">
           <img
             src={logo}
             alt="House of Amarah"
             width={1929}
             height={440}
-            className="h-11 w-auto md:h-12"
+            className="h-9 w-auto sm:h-11 md:h-12"
           />
         </a>
 
@@ -40,14 +42,14 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a
-            href={whatsappLink(GENERAL_ENQUIRY_MESSAGE)}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            onClick={() => openInquiry()}
+            aria-haspopup="dialog"
             className="hidden rounded-sm bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 sm:inline-flex"
           >
             Make an inquiry
-          </a>
+          </button>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -73,14 +75,17 @@ export function SiteHeader() {
                 {item.label}
               </a>
             ))}
-            <a
-              href={whatsappLink(GENERAL_ENQUIRY_MESSAGE)}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={() => {
+                setOpen(false);
+                openInquiry();
+              }}
+              aria-haspopup="dialog"
               className="mt-4 inline-flex justify-center rounded-sm bg-primary px-5 py-3 text-sm font-medium text-primary-foreground"
             >
               Make an inquiry
-            </a>
+            </button>
           </div>
         </nav>
       )}
