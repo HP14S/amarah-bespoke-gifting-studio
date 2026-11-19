@@ -1,6 +1,6 @@
 import { ArrowRight, Gift, MessageCircle, MessageCircleHeart, PenLine, Sparkles } from "lucide-react";
 
-import giftDetail from "@/assets/photos/house-of-amarah-gift-detail.webp.asset.json";
+import { PHOTOS } from "@/lib/photos";
 
 import { useInquiry } from "./InquiryProvider";
 
@@ -36,11 +36,14 @@ export function Approach() {
           <div className="lg:sticky lg:top-28">
             <div className="aspect-[4/3] overflow-hidden bg-stone sm:aspect-[16/10] lg:aspect-[4/5]">
               <img
-                src={giftDetail.url}
+                src={PHOTOS.giftDetail.src}
+                srcSet={PHOTOS.giftDetail.srcSet}
+                sizes="(min-width: 1280px) 480px, (min-width: 1024px) 38vw, 100vw"
                 alt="A bouquet finished with a soft ribbon"
-                width={1600}
-                height={892}
+                width={PHOTOS.giftDetail.width}
+                height={PHOTOS.giftDetail.height}
                 loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover"
               />
             </div>

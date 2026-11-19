@@ -1,6 +1,6 @@
 import { ArrowDown, ArrowRight, Sparkles } from "lucide-react";
 
-import hero from "@/assets/photos/house-of-amarah-hero.webp.asset.json";
+import { PHOTOS } from "@/lib/photos";
 
 export function Hero() {
   return (
@@ -15,7 +15,7 @@ export function Hero() {
             Make the moment <em className="block italic text-rose">mean a little more.</em>
           </h1>
           <p className="mt-8 max-w-lg text-base leading-relaxed text-muted-foreground md:text-lg">
-            Thoughtful scented candles, gift hampers, books and personalised occasion gifts — chosen
+            Scented candles, bouquets, photo frames, books, hampers and personalised gifts — chosen
             and arranged with care to celebrate the people and moments that matter.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-6">
@@ -50,11 +50,14 @@ export function Hero() {
             </div>
             <div className="aspect-[4/5] overflow-hidden bg-stone shadow-[var(--shadow-soft)]">
               <img
-                src={hero.url}
+                src={PHOTOS.hero.src}
+                srcSet={PHOTOS.hero.srcSet}
+                sizes="(min-width: 1280px) 576px, (min-width: 1024px) 45vw, 100vw"
                 alt="Hand-poured candles among flowers and lavender at the House of Amarah studio"
-                width={1600}
-                height={892}
+                width={PHOTOS.hero.width}
+                height={PHOTOS.hero.height}
                 fetchPriority="high"
+                decoding="async"
                 className="h-full w-full object-cover"
               />
             </div>

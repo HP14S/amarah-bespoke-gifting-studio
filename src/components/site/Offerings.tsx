@@ -1,54 +1,13 @@
 import { ArrowUpRight, Check, Instagram } from "lucide-react";
 
-import sweetRose from "@/assets/photos/house-of-amarah-sweet-rose.webp.asset.json";
-import orange from "@/assets/photos/house-of-amarah-orange.webp.asset.json";
-import peony from "@/assets/photos/house-of-amarah-peony.webp.asset.json";
-import bookGift from "@/assets/photos/house-of-amarah-book-gift.webp.asset.json";
-import occasionLetter from "@/assets/photos/house-of-amarah-occasion-letter-D3y-s3DX.webp.asset.json";
-import customHamper from "@/assets/photos/house-of-amarah-custom-hamper.webp.asset.json";
-import returnGifts from "@/assets/photos/house-of-amarah-onam-kids.webp.asset.json";
-import festivalHamper from "@/assets/festival-hamper.jpg";
 import { INSTAGRAM_URL } from "@/lib/whatsapp";
 
-import { AskPriceButton } from "./AskPriceButton";
-import { ImageTag } from "./ImageTag";
+import { PHOTOS } from "@/lib/photos";
+import { formatPrice, GIFTS_STARTING_PRICE } from "@/lib/pricing";
 
-function Figure({
-  src,
-  alt,
-  tag,
-  width,
-  height,
-  className,
-  caption,
-}: {
-  src: string;
-  alt: string;
-  tag: string;
-  width: number;
-  height: number;
-  className?: string;
-  caption?: string;
-}) {
-  return (
-    <figure className={`group relative overflow-hidden bg-stone ${className ?? ""}`}>
-      <ImageTag>{tag}</ImageTag>
-      <img
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        loading="lazy"
-        className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
-      />
-      {caption && (
-        <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-ink/60 to-transparent px-3 pb-2.5 pt-10 font-serif text-base italic leading-tight sm:px-4 sm:pb-3 sm:text-lg text-ink-foreground">
-          {caption}
-        </figcaption>
-      )}
-    </figure>
-  );
-}
+import { AskPriceButton } from "./AskPriceButton";
+import { Keepsakes } from "./Keepsakes";
+import { PhotoFigure as Figure } from "./PhotoFigure";
 
 const HAMPERS = [
   {
@@ -56,7 +15,7 @@ const HAMPERS = [
     eyebrow: "A thank-you to take home",
     text: "Sweet little favours for birthdays, naming ceremonies and gatherings — packed with care for every guest.",
     tag: "Made for sharing",
-    img: { src: returnGifts.url, w: 1600, h: 892 },
+    photo: PHOTOS.returnGifts,
     alt: "Children at a celebration with return gifts by House of Amarah",
   },
   {
@@ -64,7 +23,7 @@ const HAMPERS = [
     eyebrow: "Made for them",
     text: "Personalised collections put together around your person, your occasion and your budget.",
     tag: "Bespoke",
-    img: { src: customHamper.url, w: 1600, h: 892 },
+    photo: PHOTOS.customHamper,
     alt: "A custom gift hamper being wrapped by hand",
   },
   {
@@ -72,7 +31,7 @@ const HAMPERS = [
     eyebrow: "For the celebration",
     text: "Festive keepsakes and cheerful seasonal surprises, made to share a little joy with family and friends.",
     tag: "Festive edit",
-    img: { src: festivalHamper, w: 1200, h: 1504 },
+    photo: PHOTOS.festivalHamper,
     alt: "A festive hamper with a candle, brass diya and marigolds",
   },
 ];
@@ -89,38 +48,36 @@ export function Offerings() {
             </h2>
           </div>
           <p className="max-w-md text-base leading-relaxed text-muted-foreground md:justify-self-end md:text-right">
-            Each offering has its own little story. Find the one that feels just right.
+            Each offering has its own little story — candles, books, bouquets, frames and
+            personalised keepsakes, with gifts starting from {formatPrice(GIFTS_STARTING_PRICE)}.
           </p>
         </div>
 
         {/* Candles — editorial collage */}
         <article className="grid gap-5 pt-16 lg:grid-cols-12 lg:gap-8">
           <Figure
-            src={sweetRose.url}
+            photo={PHOTOS.sweetRose}
+            sizes="(min-width: 1280px) 700px, (min-width: 1024px) 56vw, 100vw"
             alt="Hand-poured Sweet Rose candle held in hand"
             tag="Hand-poured"
-            width={1600}
-            height={2400}
             caption="Sweet Rose"
             className="aspect-[4/5] lg:col-span-7 lg:aspect-auto lg:min-h-[44rem]"
           />
           <div className="flex flex-col gap-5 lg:col-span-5 lg:gap-8">
             <div className="grid grid-cols-2 gap-3 sm:gap-5">
               <Figure
-                src={orange.url}
+                photo={PHOTOS.orange}
+            sizes="(min-width: 1280px) 240px, (min-width: 1024px) 20vw, 50vw"
                 alt="Citrus inspiration for the Iced Crushed Orange candle"
                 tag="Small batch"
-                width={1600}
-                height={2132}
                 caption="Iced Crushed Orange"
                 className="aspect-[3/4]"
               />
               <Figure
-                src={peony.url}
+                photo={PHOTOS.peony}
+            sizes="(min-width: 1280px) 240px, (min-width: 1024px) 20vw, 50vw"
                 alt="Soft pink peonies, the inspiration for the Peony candle"
                 tag="Signature scent"
-                width={1600}
-                height={1600}
                 caption="Peony"
                 className="aspect-[3/4]"
               />
@@ -144,11 +101,10 @@ export function Offerings() {
         {/* Books — large image with text beside */}
         <article className="grid items-center gap-10 pt-24 lg:grid-cols-12 lg:gap-14">
           <Figure
-            src={bookGift.url}
+            photo={PHOTOS.bookGift}
+            sizes="(min-width: 1280px) 700px, (min-width: 1024px) 56vw, 100vw"
             alt="A book-themed gift with a reader in a cosy library"
             tag="Curated Keepsake"
-            width={1600}
-            height={892}
             className="aspect-[4/3] lg:col-span-7"
           />
           <div className="lg:col-span-5">
@@ -201,14 +157,16 @@ export function Offerings() {
             </div>
           </div>
           <Figure
-            src={occasionLetter.url}
+            photo={PHOTOS.occasionLetter}
+            sizes="(min-width: 1280px) 500px, (min-width: 1024px) 40vw, 100vw"
             alt="Handmade invitation papers and a letterpress in a garden"
             tag="Personalised"
-            width={1600}
-            height={892}
             className="order-1 aspect-[3/4] w-full lg:order-2 lg:col-span-5 lg:col-start-8 lg:aspect-[2/3]"
           />
         </article>
+
+        {/* Bouquets, frames & personalised gifts — filterable grid */}
+        <Keepsakes />
 
         {/* Hampers — side-by-side cards */}
         <div className="pt-28">
@@ -233,11 +191,10 @@ export function Offerings() {
                 }
               >
                 <Figure
-                  src={h.img.src}
+                  photo={h.photo}
+                  sizes="(min-width: 1280px) 400px, (min-width: 1024px) 31vw, (min-width: 640px) 50vw, 100vw"
                   alt={h.alt}
                   tag={h.tag}
-                  width={h.img.w}
-                  height={h.img.h}
                   className="aspect-[4/5]"
                 />
                 <div className="flex flex-1 flex-col p-6 sm:p-7">

@@ -34,3 +34,5 @@ use the editor.
 - Site sections live in `src/components/site/` and compose the single `/` page; nav uses in-page anchors because the client asked for a one-page site.
 - Studio photos are CDN assets referenced via `.asset.json` pointers in `src/assets/photos/` (`resolveJsonModule` enabled for these imports).
 - All enquiry buttons open one shared inquiry dialog via `InquiryProvider`/`useInquiry` (mounted in `/`), so the form and WhatsApp hand-off live in one place.
+- Photos are listed once in `src/lib/photos.ts` with a small and large CDN copy and rendered with `srcSet`/`sizes` (via `PhotoFigure`), so phones download the small copy.
+- Starting prices come from `src/lib/pricing.ts` (`startingPriceLabel`, covered by `pricing.test.ts`) so the amount and currency change in one place.
