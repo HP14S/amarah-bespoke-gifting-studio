@@ -24,9 +24,9 @@ const KEEPSAKES: Keepsake[] = [
     name: "Candle Bouquet",
     category: "bouquets",
     tag: "Hand-poured",
-    text: "Rose-shaped wax blooms, hand-tied with ribbon — a bouquet that glows long after the day.",
+    text: "Rose-shaped candle blooms gathered in a gift bag and tied with ribbon — flowers that glow.",
     photo: PHOTOS.candleBouquet,
-    alt: "A bouquet of blush and ivory rose-shaped candles wrapped in paper and ribbon",
+    alt: "A basket of hand-poured blue, white and peach rose candles tied with a ribbon",
     fromPrice: GIFTS_STARTING_PRICE,
   },
   {
@@ -60,9 +60,9 @@ const KEEPSAKES: Keepsake[] = [
     name: "LED Frames",
     category: "frames",
     tag: "Softly lit",
-    text: "A photo wrapped in a warm glow of light, made for bedside tables and cosy evenings.",
+    text: "Your favourite photos, softly lit — made for anniversaries, birthdays and cosy evenings.",
     photo: PHOTOS.ledFrames,
-    alt: "A photo frame glowing with warm LED lights on a bedside table",
+    alt: "A personalised Happy Anniversary photo collage in a glowing LED frame",
     fromPrice: GIFTS_STARTING_PRICE,
   },
   {
@@ -80,7 +80,7 @@ const KEEPSAKES: Keepsake[] = [
     tag: "Handmade",
     text: "Handmade cards with your words, names and little details, finished by hand.",
     photo: PHOTOS.customCards,
-    alt: "Handmade cards with pressed flowers, blush envelopes and a wax seal",
+    alt: "A personalised Happy Birthday name card with a candle flower gift bag",
     fromPrice: GIFTS_STARTING_PRICE,
   },
   {

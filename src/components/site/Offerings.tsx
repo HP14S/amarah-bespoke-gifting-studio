@@ -16,7 +16,7 @@ const HAMPERS = [
     text: "Sweet little favours for birthdays, naming ceremonies and gatherings — packed with care for every guest.",
     tag: "Made for sharing",
     photo: PHOTOS.returnGifts,
-    alt: "Children at a celebration with return gifts by House of Amarah",
+    alt: "A little teddy bear keepsake in a glass globe, wrapped with tulle and ribbon",
   },
   {
     name: "Custom Hampers",
@@ -24,7 +24,7 @@ const HAMPERS = [
     text: "Personalised collections put together around your person, your occasion and your budget.",
     tag: "Bespoke",
     photo: PHOTOS.customHamper,
-    alt: "A custom gift hamper being wrapped by hand",
+    alt: "A custom gift box filled with soft toys, a diary and little treats",
   },
   {
     name: "Festival Hampers",
@@ -56,29 +56,29 @@ export function Offerings() {
         {/* Candles — editorial collage */}
         <article className="grid gap-5 pt-16 lg:grid-cols-12 lg:gap-8">
           <Figure
-            photo={PHOTOS.sweetRose}
+            photo={PHOTOS.candlePeony}
             sizes="(min-width: 1280px) 700px, (min-width: 1024px) 56vw, 100vw"
-            alt="Hand-poured Sweet Rose candle held in hand"
+            alt="A hand-poured pink peony candle in a glass, held in hand"
             tag="Hand-poured"
-            caption="Sweet Rose"
+            caption="Peony Bloom"
             className="aspect-[4/5] lg:col-span-7 lg:aspect-auto lg:min-h-[44rem]"
           />
           <div className="flex flex-col gap-5 lg:col-span-5 lg:gap-8">
             <div className="grid grid-cols-2 gap-3 sm:gap-5">
               <Figure
-                photo={PHOTOS.orange}
+                photo={PHOTOS.candleOrangeBloom}
             sizes="(min-width: 1280px) 240px, (min-width: 1024px) 20vw, 50vw"
-                alt="Citrus inspiration for the Iced Crushed Orange candle"
+                alt="An orange bloom candle on a scalloped base"
                 tag="Small batch"
-                caption="Iced Crushed Orange"
+                caption="Orange Bloom"
                 className="aspect-[3/4]"
               />
               <Figure
-                photo={PHOTOS.peony}
+                photo={PHOTOS.candleTeddy}
             sizes="(min-width: 1280px) 240px, (min-width: 1024px) 20vw, 50vw"
-                alt="Soft pink peonies, the inspiration for the Peony candle"
+                alt="A pink teddy bear candle covered in roses, on a glass dish"
                 tag="Signature scent"
-                caption="Peony"
+                caption="Rose Teddy"
                 className="aspect-[3/4]"
               />
             </div>
@@ -89,7 +89,7 @@ export function Offerings() {
               </h3>
               <p className="mt-4 leading-relaxed text-muted-foreground">
                 Hand-poured in small batches, with soft, evocative fragrances to make an everyday
-                moment feel like yours. Discover Sweet Rose, Iced Crushed Orange and Peony.
+                moment feel like yours. From peony blooms to little rose teddies, each one is poured by hand.
               </p>
               <div className="mt-7">
                 <AskPriceButton product="Scented & Wellness Candles" />

@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import { ShoppingBag } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -23,7 +23,7 @@ export function AskPriceButton({
       type="button"
       onClick={() => openInquiry({ item: product, kind })}
       aria-haspopup="dialog"
-      aria-label={`Ask for the price of ${product}`}
+      aria-label={`Order ${product}`}
       className={cn(
         "group inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-sm font-medium transition-all duration-300",
         size === "sm"
@@ -35,8 +35,8 @@ export function AskPriceButton({
         className,
       )}
     >
-      <MessageCircle className={size === "sm" ? "h-3.5 w-3.5" : "h-4 w-4"} strokeWidth={1.5} />
-      Ask for Price
+      <ShoppingBag className={size === "sm" ? "h-3.5 w-3.5" : "h-4 w-4"} strokeWidth={1.5} />
+      Order Now
     </button>
   );
 }

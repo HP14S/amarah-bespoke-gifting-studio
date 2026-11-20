@@ -36,12 +36,12 @@ export function Approach() {
           <div className="lg:sticky lg:top-28">
             <div className="aspect-[4/3] overflow-hidden bg-stone sm:aspect-[16/10] lg:aspect-[4/5]">
               <img
-                src={PHOTOS.giftDetail.src}
-                srcSet={PHOTOS.giftDetail.srcSet}
+                src={PHOTOS.signatureBag.src}
+                srcSet={PHOTOS.signatureBag.srcSet}
                 sizes="(min-width: 1280px) 480px, (min-width: 1024px) 38vw, 100vw"
-                alt="A bouquet finished with a soft ribbon"
-                width={PHOTOS.giftDetail.width}
-                height={PHOTOS.giftDetail.height}
+                alt="A House of Amarah gift bag filled with candle flowers, held in hand"
+                width={PHOTOS.signatureBag.width}
+                height={PHOTOS.signatureBag.height}
                 loading="lazy"
                 decoding="async"
                 className="h-full w-full object-cover"
