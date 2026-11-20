@@ -29,10 +29,10 @@ const HAMPERS = [
   {
     name: "Festival Hampers",
     eyebrow: "For the celebration",
-    text: "Festive keepsakes and cheerful seasonal surprises, made to share a little joy with family and friends.",
+    text: "Christmas candles, gingerbread and cosy seasonal surprises, made to share a little joy with family and friends.",
     tag: "Festive edit",
     photo: PHOTOS.festivalHamper,
-    alt: "A festive hamper with a candle, brass diya and marigolds",
+    alt: "A Christmas hamper with candles, gingerbread, baubles and a red ribbon",
   },
 ];
 
@@ -56,29 +56,29 @@ export function Offerings() {
         {/* Candles — editorial collage */}
         <article className="grid gap-5 pt-16 lg:grid-cols-12 lg:gap-8">
           <Figure
-            photo={PHOTOS.candlePeony}
+            photo={PHOTOS.sweetRose}
             sizes="(min-width: 1280px) 700px, (min-width: 1024px) 56vw, 100vw"
-            alt="A hand-poured pink peony candle in a glass, held in hand"
+            alt="Hand-poured Sweet Rose candle held in hand"
             tag="Hand-poured"
-            caption="Peony Bloom"
+            caption="Sweet Rose"
             className="aspect-[4/5] lg:col-span-7 lg:aspect-auto lg:min-h-[44rem]"
           />
           <div className="flex flex-col gap-5 lg:col-span-5 lg:gap-8">
             <div className="grid grid-cols-2 gap-3 sm:gap-5">
               <Figure
-                photo={PHOTOS.candleOrangeBloom}
+                photo={PHOTOS.orange}
             sizes="(min-width: 1280px) 240px, (min-width: 1024px) 20vw, 50vw"
-                alt="An orange bloom candle on a scalloped base"
+                alt="Citrus inspiration for the Iced Crushed Orange candle"
                 tag="Small batch"
-                caption="Orange Bloom"
+                caption="Iced Crushed Orange"
                 className="aspect-[3/4]"
               />
               <Figure
-                photo={PHOTOS.candleTeddy}
+                photo={PHOTOS.peony}
             sizes="(min-width: 1280px) 240px, (min-width: 1024px) 20vw, 50vw"
-                alt="A pink teddy bear candle covered in roses, on a glass dish"
+                alt="Soft pink peonies, the inspiration for the Peony candle"
                 tag="Signature scent"
-                caption="Rose Teddy"
+                caption="Peony"
                 className="aspect-[3/4]"
               />
             </div>
@@ -89,7 +89,7 @@ export function Offerings() {
               </h3>
               <p className="mt-4 leading-relaxed text-muted-foreground">
                 Hand-poured in small batches, with soft, evocative fragrances to make an everyday
-                moment feel like yours. From peony blooms to little rose teddies, each one is poured by hand.
+                moment feel like yours. Discover Sweet Rose, Iced Crushed Orange and Peony.
               </p>
               <div className="mt-7">
                 <AskPriceButton product="Scented & Wellness Candles" />

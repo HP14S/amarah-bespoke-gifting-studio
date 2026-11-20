@@ -66,11 +66,11 @@ const KEEPSAKES: Keepsake[] = [
     fromPrice: GIFTS_STARTING_PRICE,
   },
   {
-    name: "Photo Mugs",
+    name: "Customised Mugs",
     category: "personalised",
     tag: "Everyday keepsake",
     text: "A favourite face on a morning mug — for coffee, tea and smiles.",
-    photo: PHOTOS.photoMugs,
+    photo: PHOTOS.customMugs,
     alt: "A ceramic mug printed with a family photograph beside a gift box",
     fromPrice: GIFTS_STARTING_PRICE,
   },
@@ -80,7 +80,7 @@ const KEEPSAKES: Keepsake[] = [
     tag: "Handmade",
     text: "Handmade cards with your words, names and little details, finished by hand.",
     photo: PHOTOS.customCards,
-    alt: "A personalised Happy Birthday name card with a candle flower gift bag",
+    alt: "A handmade card with blush watercolour flowers beside a kraft envelope and wax seal",
     fromPrice: GIFTS_STARTING_PRICE,
   },
   {
