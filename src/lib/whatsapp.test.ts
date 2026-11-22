@@ -1,6 +1,21 @@
 import { describe, expect, it } from "vitest";
 
-import { enquiryLink, enquiryMessage } from "./whatsapp";
+import { CONTACT_NUMBERS, WHATSAPP_NUMBER, enquiryLink, enquiryMessage } from "./whatsapp";
+
+describe("Studio contact numbers", () => {
+  it("lists both supplied UK phone numbers", () => {
+    expect(CONTACT_NUMBERS).toEqual([
+      { label: "+44 7384 182573", digits: "447384182573" },
+      { label: "+44 7348 337874", digits: "447348337874" },
+    ]);
+  });
+
+  it("directs enquiries to the second number on WhatsApp", () => {
+    expect(WHATSAPP_NUMBER).toBe("447348337874");
+    const url = new URL(enquiryLink({ item: "Candle Bouquet", name: "Sam", phone: "07700900123" }));
+    expect(url.origin + url.pathname).toBe("https://wa.me/447348337874");
+  });
+});
 
 describe("Enquiry WhatsApp message", () => {
   it("includes the item, name and phone, and asks for price and details", () => {

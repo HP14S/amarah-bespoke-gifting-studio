@@ -33,7 +33,7 @@ export function PhotoFigure({
         loading={priority ? "eager" : "lazy"}
         decoding="async"
         {...(priority ? { fetchPriority: "high" as const } : {})}
-        className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
+        className="studio-photo h-full w-full object-cover"
       />
       {caption && (
         <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-ink/60 to-transparent px-3 pb-2.5 pt-10 font-serif text-base italic leading-tight text-ink-foreground sm:px-4 sm:pb-3 sm:text-lg">

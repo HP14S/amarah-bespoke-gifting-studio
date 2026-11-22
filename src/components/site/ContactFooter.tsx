@@ -1,7 +1,9 @@
-import { ArrowUp, Instagram, MessageCircle } from "lucide-react";
+import { ArrowUp, Instagram, MessageCircle, Phone } from "lucide-react";
 
 import logoLight from "@/assets/house-of-amarah-logo-light.png";
+import { Button } from "@/components/ui/button";
 import {
+  CONTACT_NUMBERS,
   GENERAL_ENQUIRY_MESSAGE,
   INSTAGRAM_HANDLE,
   INSTAGRAM_URL,
@@ -27,24 +29,38 @@ export function ContactFooter() {
             </p>
           </div>
           <div className="flex flex-col gap-4 lg:col-span-4 lg:col-start-9">
+            <div className="mb-2 flex flex-col items-start gap-3">
+              {CONTACT_NUMBERS.map((number) => (
+                <a
+                  key={number.digits}
+                  href={`tel:+${number.digits}`}
+                  className="contact-number inline-flex min-h-11 items-center gap-3 text-base text-ink-foreground underline-offset-4 hover:underline"
+                >
+                  <Phone className="h-4 w-4 shrink-0 text-ink-muted" strokeWidth={1.5} />
+                  {number.label}
+                </a>
+              ))}
+            </div>
+            <Button asChild className="studio-hover h-auto rounded-sm bg-accent px-6 py-4 text-sm font-medium text-accent-foreground hover:bg-accent/90">
             <a
               href={wa}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-sm bg-accent px-6 py-4 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-90"
             >
               <MessageCircle className="h-4 w-4" strokeWidth={1.5} />
               Enquire on WhatsApp
             </a>
+            </Button>
+            <Button asChild variant="outline" className="studio-hover h-auto rounded-sm border-ink-foreground/25 bg-transparent px-6 py-4 text-sm font-medium text-ink-foreground hover:border-ink-foreground hover:bg-ink-foreground/5 hover:text-ink-foreground">
             <a
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-sm border border-ink-foreground/25 px-6 py-4 text-sm font-medium transition-colors hover:border-ink-foreground"
             >
               <Instagram className="h-4 w-4" strokeWidth={1.5} />
               {INSTAGRAM_HANDLE}
             </a>
+            </Button>
           </div>
         </div>
 

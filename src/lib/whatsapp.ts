@@ -1,8 +1,10 @@
-/**
- * WhatsApp number for enquiries, digits only with country code (e.g. "919876543210").
- * Left empty, links open WhatsApp with the message ready and let the visitor pick the chat.
- */
-export const WHATSAPP_NUMBER = "";
+/** Studio contacts, kept together so phone and WhatsApp links stay consistent. */
+export const CONTACT_NUMBERS = [
+  { label: "+44 7384 182573", digits: "447384182573" },
+  { label: "+44 7348 337874", digits: "447348337874" },
+] as const;
+
+export const WHATSAPP_NUMBER = CONTACT_NUMBERS[1].digits;
 
 export const INSTAGRAM_URL = "https://www.instagram.com/house_of_amarah_official__/";
 export const INSTAGRAM_HANDLE = "@house_of_amarah_official__";

@@ -157,3 +157,39 @@
   letter-spacing: 0.22em;
   text-transform: uppercase;
 }
+
+.studio-hover,
+.contact-number {
+  transition: transform 250ms ease, background-color 250ms ease, border-color 250ms ease, box-shadow 250ms ease;
+}
+
+.studio-photo {
+  transition: transform 900ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .studio-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .contact-number:hover {
+    transform: translateX(3px);
+  }
+
+  figure:hover .studio-photo {
+    transform: scale(1.035);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .studio-hover,
+  .contact-number,
+  .studio-photo {
+    transition: none;
+  }
+}

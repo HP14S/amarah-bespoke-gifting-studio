@@ -31,6 +31,8 @@ use the editor.
 
 ## Project rules
 - WhatsApp/Instagram links are built only through `src/lib/whatsapp.ts` (number + message helpers, covered by `whatsapp.test.ts`) so the contact number changes in one place.
+- Phone display labels and dialling digits also live in `src/lib/whatsapp.ts`; render contact links from this list so phone and WhatsApp details cannot drift.
+- Site hover motion uses shared CSS classes gated to fine pointers and reduced-motion preferences, so touch devices avoid sticky hover movement.
 - Site sections live in `src/components/site/` and compose the single `/` page; nav uses in-page anchors because the client asked for a one-page site.
 - Studio photos are CDN assets referenced via `.asset.json` pointers in `src/assets/photos/` (`resolveJsonModule` enabled for these imports).
 - All enquiry buttons open one shared inquiry dialog via `InquiryProvider`/`useInquiry` (mounted in `/`), so the form and WhatsApp hand-off live in one place.
