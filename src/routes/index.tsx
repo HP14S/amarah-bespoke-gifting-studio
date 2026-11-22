@@ -10,7 +10,7 @@ import { StudioIntro } from "@/components/site/StudioIntro";
 
 const TITLE = "House of Amarah — Thoughtful Gifting Studio";
 const DESCRIPTION =
-  "Hand-poured candles, literary gifts, custom invitations and bespoke gift hampers — thoughtfully made by House of Amarah.";
+  "Hand-poured candles, literary gifts, custom invitations and bespoke gift hampers — thoughtfully made by House of Amarah, with delivery across the UK.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

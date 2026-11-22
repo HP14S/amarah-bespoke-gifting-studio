@@ -23,7 +23,7 @@ export function ContactFooter() {
             </h2>
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-ink-muted">
               Message us on WhatsApp with the occasion and who it is for — we will reply with ideas,
-              details and prices.
+              details and prices. We deliver across the UK.
             </p>
           </div>
           <div className="flex flex-col gap-4 lg:col-span-4 lg:col-start-9">
@@ -87,7 +87,7 @@ export function ContactFooter() {
         </div>
 
         <div className="mt-10 flex flex-col gap-3 text-xs text-ink-muted sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} House of Amarah. Thoughtfully made, with love.</p>
+          <p>© {new Date().getFullYear()} House of Amarah. Thoughtfully made, with love. Delivering across the UK.</p>
           <a href="#home" className="inline-flex items-center gap-1 hover:text-ink-foreground">
             Back to the beginning <ArrowUp className="h-3.5 w-3.5" />
           </a>

@@ -33,11 +33,13 @@ export function Hero() {
               A little about us <ArrowDown className="h-4 w-4" />
             </a>
           </div>
-          <div className="mt-12 flex items-center gap-3 text-xs text-muted-foreground">
+          <div className="mt-12 flex flex-wrap items-center gap-x-3 gap-y-2 text-xs text-muted-foreground">
             <span className="h-px w-8 bg-rose" />
             Handmade with love
             <span aria-hidden>·</span>
             Made personal for you
+            <span aria-hidden>·</span>
+            UK-wide delivery
           </div>
         </div>
 
