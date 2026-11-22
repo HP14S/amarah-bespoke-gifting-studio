@@ -69,9 +69,9 @@ const KEEPSAKES: Keepsake[] = [
     name: "Customised Mugs",
     category: "personalised",
     tag: "Everyday keepsake",
-    text: "A favourite face on a morning mug — for coffee, tea and smiles.",
+    text: "A mug finished with their initial, name or design — for coffee, tea and smiles.",
     photo: PHOTOS.customMugs,
-    alt: "A ceramic mug printed with a family photograph beside a gift box",
+    alt: "A ceramic mug with blush flowers and a gold initial beside a ribboned gift box",
     fromPrice: GIFTS_STARTING_PRICE,
   },
   {
